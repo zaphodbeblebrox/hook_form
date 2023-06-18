@@ -40,9 +40,14 @@ const HookForm = ({setUser}) => {
             </form>
             <div>
                 <p>First Name: {firstName}</p>
+                {firstName.length < 2 && firstName !== "" ? <p>First Name must be at least 2 characters</p>:null}
                 <p>Last Name: {lastName}</p>
+                {lastName.length < 2 && lastName !== "" ? <p>Last Name must be at least 2 characters</p>:null}
                 <p>Email: {email}</p>
+                {email.length < 5 && email !== "" ? <p>Email must be at least 5 characters</p>:null}
                 <p>Password: {password}</p>
+                {password.length < 8 && password !== "" ? <p>Password must be at least 8 characters</p>:null}
+                {password !== confirmPassword && password !== "" ? <p>Passwords must match</p>:null}
                 <p>Confirm Password: {confirmPassword}</p>
             </div>
         </div>
